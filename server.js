@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // To run when client is connected
 io.on('connection', socket =>{
     console.log('on socket connection');
+
+    socket.emit('message', 'Welcome to GSP Chat')
 })
 
 const PORT = 3000 || process.env.PORT;
